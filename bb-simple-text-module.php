@@ -1,9 +1,10 @@
 <?php
 /**
  * Plugin Name: Beaver Builder Simple Text Module
- * Description: Adds a Simple Text module to Beaver Builder with extended HTML tag options (p, span, div).
+ * Plugin URI:  https://snippetnest.com/snippet/simple-text-module-for-beaver-builder-components/
+ * Description: Adds a Simple Text module to Beaver Builder with extended HTML tag options
  * Author: PYLE/DIGITAL
- * Version: 1.0.1
+ * Version: 1.0.2
  * Text Domain: bb-simple-text
  */
 
@@ -40,7 +41,7 @@ if (class_exists('BB_Simple_Text_GithubUpdater')) {
 		'rating'		=> '100.0',
 		'num_ratings'	=> '10',
 		'downloaded'	=> '10',
-		'added'			=> '2025-09-28',
+		'added'			=> '2025-11-19',
 	));
 	$bb_simple_text_updater->initialize();
 }
