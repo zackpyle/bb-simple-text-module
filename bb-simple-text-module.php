@@ -3,7 +3,7 @@
  * Plugin Name: Beaver Builder Simple Text Module
  * Description: Adds a Simple Text module to Beaver Builder with extended HTML tag options (p, span, div).
  * Author: PYLE/DIGITAL
- * Version: 1.0.0
+ * Version: 1.0.1
  * Text Domain: bb-simple-text
  */
 

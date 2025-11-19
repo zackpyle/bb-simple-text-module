@@ -2,7 +2,7 @@
 
 A minimal text module for Beaver Builder that gives you exact control over the HTML tag used for your text content.
 
-The native Beaver Builder **Heading** module only lets you select heading tags (e.g. `h1–h6`), and the native **Text Editor** module is a full WYSIWYG. This module fills the gap by providing a **simple text input** with flexible tag options.
+The native Beaver Builder **Heading** module only lets you select heading tags (e.g. `h1–h6`), and the native **Text Editor** module is a full WYSIWYG (which takes up a lot of space in the component view). This module fills the gap by providing a **simple text input** with flexible tag options.
 
 ---
 
@@ -10,7 +10,7 @@ The native Beaver Builder **Heading** module only lets you select heading tags (
 
 - **Simple text input**
   - No WYSIWYG editor.
-  - Ideal for small labels, titles, and short snippets.
+  - Ideal for small labels, titles, and short amounts of text.
 - **Flexible tag selection**
   - Choose from: `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `span`, `div`.
   - Behaves like the native Heading module, but with additional non-heading options.
