@@ -4,7 +4,7 @@
  * Plugin URI:  https://snippetnest.com/snippet/simple-text-module-for-beaver-builder-components/
  * Description: Adds a Simple Text module to Beaver Builder with extended HTML tag options
  * Author: PYLE/DIGITAL
- * Version: 1.0.2
+ * Version: 1.1.0
  * Text Domain: bb-simple-text
  */
 
@@ -24,7 +24,7 @@ add_action( 'init', function() {
 		}
 
 		// Load the module class which registers itself.
-		require_once BBSTM_DIR . 'modules/simple-text/simple-text.php';
+		require_once BBSTM_DIR . 'modules/sn-simple-text/sn-simple-text.php';
 	}
 });
 

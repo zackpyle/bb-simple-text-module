@@ -17,8 +17,8 @@ class FLSTSimpleTextModule extends FLBuilderModule {
 			'partial_refresh' => true,
 			'include_wrapper' => true,
 			'element_setting' => false,
-			'dir'             => BBSTM_DIR . 'modules/simple-text/',
-			'url'             => BBSTM_URL . 'modules/simple-text/',
+			'dir'             => BBSTM_DIR . 'modules/sn-simple-text/',
+			'url'             => BBSTM_URL . 'modules/sn-simple-text/',
 		) );
 	}
 
