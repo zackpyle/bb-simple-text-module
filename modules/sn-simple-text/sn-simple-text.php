@@ -60,7 +60,9 @@ FLBuilder::register_module( 'FLSTSimpleTextModule', array(
 						'type'     => 'select',
 						'label'    => __( 'HTML Tag', 'bb-simple-text' ),
 						'default'  => 'p',
-						'sanitize' => array( 'FLBuilderUtils::esc_tags', 'p' ),
+						// Use a generic sanitizer so custom tags added via the sn_simple_text_tag_options filter (e.g. strong, em) are preserved.
+						// The options list itself is controlled and escaped on output.
+						'sanitize' => 'sanitize_key',
 						'options'  => apply_filters(
 							'sn_simple_text_tag_options',
 							array(
