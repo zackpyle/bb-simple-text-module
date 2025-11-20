@@ -61,15 +61,18 @@ FLBuilder::register_module( 'FLSTSimpleTextModule', array(
 						'label'    => __( 'HTML Tag', 'bb-simple-text' ),
 						'default'  => 'p',
 						'sanitize' => array( 'FLBuilderUtils::esc_tags', 'p' ),
-						'options'  => array(
-							'p'    => 'p',
-							'span' => 'span',
-							'div'  => 'div',
-							'h2'   => 'h2',
-							'h3'   => 'h3',
-							'h4'   => 'h4',
-							'h5'   => 'h5',
-							'h6'   => 'h6',
+						'options'  => apply_filters(
+							'sn_simple_text_tag_options',
+							array(
+								'p'    => 'p',
+								'span' => 'span',
+								'div'  => 'div',
+								'h2'   => 'h2',
+								'h3'   => 'h3',
+								'h4'   => 'h4',
+								'h5'   => 'h5',
+								'h6'   => 'h6',
+							)
 						),
 						'preview'  => array(
 							'type' => 'refresh',
