@@ -3,6 +3,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Ensure the wrapper behaves consistently for ALL tags (span, strong, etc.).
+FLBuilderCSS::rule( array(
+	'selector' => ".fl-node-$id .fl-simple-text",
+	'props'    => array(
+		'display' => 'inline-block',
+	),
+) );
+
 // Text color.
 FLBuilderCSS::responsive_rule( array(
 	'settings'     => $settings,
