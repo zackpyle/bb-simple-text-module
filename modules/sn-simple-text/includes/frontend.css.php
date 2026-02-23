@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 FLBuilderCSS::rule( array(
 	'selector' => ".fl-node-$id .fl-simple-text",
 	'props'    => array(
-		'display' => 'inline-block',
+		'display' => 'block',
 	),
 ) );
 

@@ -4,7 +4,7 @@
  * Plugin URI:  https://snippetnest.com/snippet/simple-text-module-for-beaver-builder-components/
  * Description: Adds a Simple Text module to Beaver Builder with extended HTML tag options
  * Author: PYLE/DIGITAL
- * Version: 1.2.3
+ * Version: 1.2.4
  * Text Domain: bb-simple-text
  */
 
@@ -29,7 +29,7 @@ add_action( 'init', function() {
 });
 
 // GitHub Updater integration
-require_once plugin_dir_path(__FILE__) . 'GithubUpdater.php';
+require_once plugin_dir_path(__FILE__) . 'includes/GithubUpdater.php';
 if (class_exists('BB_Simple_Text_GithubUpdater')) {
 	$bb_simple_text_updater = new BB_Simple_Text_GithubUpdater(__FILE__);
 	$bb_simple_text_updater->set_username('zackpyle');
@@ -45,3 +45,29 @@ if (class_exists('BB_Simple_Text_GithubUpdater')) {
 	));
 	$bb_simple_text_updater->initialize();
 }
+
+// Anonymized Analytics
+if ( ! defined( 'SN_ANALYTICS_ENDPOINT' ) ) {
+	define( 'SN_ANALYTICS_ENDPOINT', 'https://snippetnest.com/wp-json/sn-analytics/v1/ping' );
+}
+if ( ! defined( 'SN_ANALYTICS_SECRET' ) ) {
+	define( 'SN_ANALYTICS_SECRET', 'b64:O84AMMGANsFvXQFWgVW5OrbzghcxWZ7ygb3vUhWGZiA=' );
+}
+require_once __DIR__ . '/includes/class-sn-analytics.php';
+if ( class_exists( 'SN_Analytics' ) ) {
+	$sn_analytics = new SN_Analytics( __FILE__, 'sn-simple-text-module' );
+	register_activation_hook( __FILE__, function() use ( $sn_analytics ) {
+		$sn_analytics->activate();
+	} );
+	register_deactivation_hook( __FILE__, function() use ( $sn_analytics ) {
+		$sn_analytics->deactivate();
+	} );
+	$sn_analytics->initialize();
+}
+function sn_simple_text_module_uninstall() {
+	require_once __DIR__ . '/includes/class-sn-analytics.php';
+	if ( class_exists( 'SN_Analytics' ) ) {
+		SN_Analytics::uninstall( 'sn-simple-text-module' );
+	}
+}
+register_uninstall_hook( __FILE__, 'sn_simple_text_module_uninstall' );
