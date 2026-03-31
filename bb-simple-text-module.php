@@ -1,10 +1,11 @@
 <?php
 /**
  * Plugin Name: Beaver Builder Simple Text Module
- * Plugin URI:  https://snippetnest.com/snippet/simple-text-module-for-beaver-builder-components/
+ * Plugin URI:  https://snippetnest.com/module/simple-text-module-for-beaver-builder-components/
  * Description: Adds a Simple Text module to Beaver Builder with extended HTML tag options
- * Author: PYLE/DIGITAL
- * Version: 1.2.4
+ * Author: SnippetNest
+ * Author URI: https://snippetnest.com
+ * Version: 1.2.5
  * Text Domain: bb-simple-text
  */
 
@@ -46,7 +47,7 @@ if (class_exists('BB_Simple_Text_GithubUpdater')) {
 	$bb_simple_text_updater->initialize();
 }
 
-// Anonymized Analytics
+// SN Analytics
 if ( ! defined( 'SN_ANALYTICS_ENDPOINT' ) ) {
 	define( 'SN_ANALYTICS_ENDPOINT', 'https://snippetnest.com/wp-json/sn-analytics/v1/ping' );
 }

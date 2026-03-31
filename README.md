@@ -33,7 +33,10 @@ add_filter( 'sn_simple_text_tag_options', function ( $options ) {
 	$options['strong'] = 'strong';
 	$options['em']     = 'em';
 
-	// Optionally remove tags
+	// Remove tags from the dropdown (example: remove h1)
+	unset( $options['h1'] );
+
+	// You can also remove individual tags
 	// unset( $options['div'] );
 
 	return $options;
